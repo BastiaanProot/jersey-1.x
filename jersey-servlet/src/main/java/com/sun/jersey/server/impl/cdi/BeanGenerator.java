@@ -48,9 +48,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import jersey.repackaged.org.objectweb.asm.ClassWriter;
-import jersey.repackaged.org.objectweb.asm.MethodVisitor;
-import jersey.repackaged.org.objectweb.asm.Opcodes;
+import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
 
 /**
  * Generates any number of plain bean classes on the fly, loading them with

@@ -52,7 +52,7 @@
 
     <groupId>com.sun.jersey</groupId>
     <artifactId>jersey-project</artifactId>
-    <version>1.20-SNAPSHOT</version>
+    <version>1.20-asm7.1</version>
     <packaging>pom</packaging>
     <name>jersey-project</name>
 
@@ -66,6 +66,19 @@
         <name>Oracle Corporation</name>
         <url>http://www.oracle.com/</url>
     </organization>
+
+    <distributionManagement>
+        <repository>
+            <id>artifactory.service.vaph.be</id>
+            <name>VAPH local releases</name>
+            <url>http://artifactory.service.vaph.be:8081/artifactory/local-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>artifactory.service.vaph.be</id>
+            <name>VAPH local snapshots</name>
+            <url>http://artifactory.service.vaph.be:8081/artifactory/local-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <issueManagement>
         <system>JIRA</system>
@@ -182,20 +195,20 @@
                 </plugins>
             </build>
         </profile>
-        <profile>
-            <id>experimental</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <modules>
-                <module>experimental</module>
-                <module>archetypes</module>
-                <module>archive</module>
-                <module>jersey-bundle</module>
-                <module>glassfish</module>
-                <module>ri</module>
-            </modules>
-        </profile>
+<!--        <profile>-->
+<!--            <id>experimental</id>-->
+<!--            <activation>-->
+<!--                <activeByDefault>true</activeByDefault>-->
+<!--            </activation>-->
+<!--            <modules>-->
+<!--                <module>experimental</module>-->
+<!--                <module>archetypes</module>-->
+<!--                <module>archive</module>-->
+<!--                <module>jersey-bundle</module>-->
+<!--                <module>glassfish</module>-->
+<!--                <module>ri</module>-->
+<!--            </modules>-->
+<!--        </profile>-->
         <profile>
             <id>osgi-tests</id>
             <modules>
@@ -347,21 +360,21 @@
 
     <modules>
         <module>contribs</module>
-        <module>jersey-atom</module>
-        <module>jersey-client</module>
+<!--        <module>jersey-atom</module>-->
+<!--        <module>jersey-client</module>-->
         <module>jersey-core</module>
-        <module>jersey-documentation</module>
-        <module>jersey-fastinfoset</module>
-        <module>jersey-grizzly</module>
-        <module>jersey-grizzly2</module>
-        <module>jersey-grizzly2-servlet</module>
-        <module>jersey-json</module>
-        <module>jersey-server-linking</module>
+<!--        <module>jersey-documentation</module>-->
+<!--        <module>jersey-fastinfoset</module>-->
+<!--        <module>jersey-grizzly</module>-->
+<!--        <module>jersey-grizzly2</module>-->
+<!--        <module>jersey-grizzly2-servlet</module>-->
+<!--        <module>jersey-json</module>-->
+<!--        <module>jersey-server-linking</module>-->
         <module>jersey-server</module>
         <module>jersey-servlet</module>
-        <module>jersey-test-framework</module>
-        <module>jersey-tests</module>
-        <module>samples</module>
+<!--        <module>jersey-test-framework</module>-->
+<!--        <module>jersey-tests</module>-->
+<!--        <module>samples</module>-->
     </modules>
 
     <build>
@@ -407,8 +420,8 @@
                     <version>2.3</version>
                     <inherited>true</inherited>
                     <configuration>
-                        <source>1.6</source>
-                        <target>1.6</target>
+                        <source>11</source>
+                        <target>11</target>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -451,7 +464,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>2.3.6</version>
+                    <version>4.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -664,7 +677,7 @@
         <jaxrs.version>1.1.1</jaxrs.version>
         <moxy.version>2.3.4-M6</moxy.version>
         <servlet3.version>3.0.1</servlet3.version>
-        <asm.version>6.0</asm.version>
+        <asm.version>7.1</asm.version>
         <release.tests.args>-Dmaven.test.skip=false</release.tests.args>
         <release.preparationGoals>clean install</release.preparationGoals>
     </properties>

@@ -104,7 +104,7 @@
                 <aspectjrt.version>1.7.0</aspectjrt.version>
             </properties>
         </profile>
-         <profile>
+        <profile>
             <id>aspectjrt-jdk8</id>
             <activation>
                 <jdk>1.8</jdk>
